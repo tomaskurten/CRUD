@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Edit</h1>
+    <h1>formulario</h1>
+    {% for empleado in empleados %}
+    <form method="post" action="/update" enctype="multipart/form-data">
+    
+     ID:
+     <input type="text" value="{{ empleado[0] }}" name="txtID" id="txtID">
+     Nombre:
+     <input type="text" value="{{ empleado[1] }}" name="txtNombre" id="txt
+    Nombre">
+     <br>
+     Correo:
+     <input type="text" value="{{ empleado[2] }}" name="txtCorreo" id="txt
+    Correo">
+     <br>
+     Foto:
+     {{ empleado[3] }}
+     <input type="file" name="txtFoto" id="txtFoto">
+     <br>
+     <br>
+     <input type="submit" value="Agregar">
+    
+    </form>
+    {% endfor %}
+</body>
+</html>
