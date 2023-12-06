@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>INDEX</h1>
+    <p>estas en el index</p>
+    <h2>estas usando render template</h2>
+    <a href="create">create</a>
+    
+    <table class="table table-light">
+        <thead class="thead-light">       
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Foto</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for emp in empleados %}
+            <tr>
+                <td>{{emp[0]}}</td>
+                <td>{{emp[1]}}</td>
+                <td>{{emp[2]}}</td>
+                <td>{{emp[3]}}</td>
+                <td><a class="btn btn-warning" href="/edit/{{emp[0]}}">Editar</a> | <a class="btn btn-danger" href="/destroy/{{emp[0]}}">Borrar</a> </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</body>
+</html>
